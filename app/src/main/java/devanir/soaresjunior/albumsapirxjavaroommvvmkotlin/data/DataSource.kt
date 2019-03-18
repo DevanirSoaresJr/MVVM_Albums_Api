@@ -5,5 +5,5 @@ import io.reactivex.Maybe
 
 interface DataSource {
     fun getAlbums(): Maybe<List<AlbumsItem>>
-    fun addAlbums(album :AlbumsItem)
+    fun addAlbums(albums :AlbumsItem)
 }
