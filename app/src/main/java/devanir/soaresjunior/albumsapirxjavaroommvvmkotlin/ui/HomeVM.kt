@@ -21,10 +21,8 @@ class HomeVM: ViewModel() {
 
     private lateinit var repo : DataSource
 
-    private lateinit var resultsAdapter: ResultsAdapter
 
     fun getAlbums(application: Application){
-        resultsAdapter = ResultsAdapter()
         repo= AlbumsRepo(remoteDataSource = RemoteDataSource(),
             localDataSource = LocalDataSource(application)
         )

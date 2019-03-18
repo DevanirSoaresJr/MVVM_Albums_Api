@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         rvAlbums.layoutManager = LinearLayoutManager(this)
         rvAlbums.adapter = resultsAdapter
 
-        val homeViewModel = ViewModelProviders.of(this).get(HomeVM::class.java)
+        val homeVM = ViewModelProviders.of(this).get(HomeVM::class.java)
 
         val observer = Observer<List<AlbumsItem>> { results->
             if (results != null) {
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        homeViewModel.getAlbums(application)
-        homeViewModel.getAlbumObservable().observe(this,observer)
+        homeVM.getAlbums(application)
+        homeVM.getAlbumObservable().observe(this,observer)
     }
 }

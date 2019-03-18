@@ -14,5 +14,5 @@ class LocalDataSource(private val application: Application): DataSource{
     override fun getAlbums()=database.albumsDao().getAllAlbums()
 
     override fun addAlbums(albums: AlbumsItem) {
-database.albumsDao().addAlbums(albums)    }
+    database.albumsDao().addAlbums(albums)    }
 }
