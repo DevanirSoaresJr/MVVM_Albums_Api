@@ -11,6 +11,7 @@ class AlbumsRepo(private val localDataSource: LocalDataSource,
     override fun getAlbums(): Maybe<List<AlbumsItem>> {
         return remoteDataSource.getAlbums()
             .doOnSuccess { it.forEach { albums -> addAlbums(albums) } }
+            //onErrorResumeNext is where the magic happens to because if our remoteDataSource fails e.g. No Internet
             .onErrorResumeNext { _: Throwable -> localDataSource.getAlbums() }
     }
 
