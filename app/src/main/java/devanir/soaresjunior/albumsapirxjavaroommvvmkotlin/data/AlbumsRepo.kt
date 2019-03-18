@@ -1,7 +1,6 @@
 package devanir.soaresjunior.albumsapirxjavaroommvvmkotlin.data
 
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
+
 import devanir.soaresjunior.albumsapirxjavaroommvvmkotlin.ui.AlbumsItem
 import io.reactivex.Maybe
 

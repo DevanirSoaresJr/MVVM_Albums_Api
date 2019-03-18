@@ -34,7 +34,15 @@ class ResultsAdapter: RecyclerView.Adapter<ResultsAdapter.AlbumsViewHolder>() {
     }
 
     override fun onBindViewHolder(vh: ResultsAdapter.AlbumsViewHolder, position: Int) {
-        vh.tvAlbumId.text = "Album ID: " + albumsList[position].albumId.toString()
-        vh.tvAlbumTitle.text = "Album Title: " + albumsList[position].albumTitle
-        vh.tvUserId.text ="User ID: " + albumsList[position].userId.toString()    }
+
+        val albumsItem = albumsList.get(position)
+
+        val albumId = vh.itemView.context.getString(R.string.strAlbumID, albumsItem.albumId)
+        val albumName = vh.itemView.context.getString(R.string.strAlbumName, albumsItem.albumTitle)
+        val userId = vh.itemView.context.getString(R.string.strUserID, albumsItem.userId)
+
+        vh.tvAlbumId.text =  albumId
+        vh.tvAlbumTitle.text = albumName
+        vh.tvUserId.text = userId
+    }
 }
